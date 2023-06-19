@@ -385,8 +385,8 @@ function getFalsyValuesCount(arr) {
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  return arr.filter((n) => n === item).length;
 }
 
 /**
@@ -453,9 +453,15 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const result = Array(n).fill([]);
+  return result.map((item, index) => {
+    const innerArr = Array(n).fill(0);
+    innerArr.splice(index, 1, 1);
+    return innerArr;
+  });
 }
+
 
 /**
  * Creates an array of integers from the specified start to end (inclusive)
