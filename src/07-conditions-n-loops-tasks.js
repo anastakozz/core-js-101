@@ -294,7 +294,7 @@ function getDigitalRoot(num) {
   return sum;
 }
 
-// console.log(getDigitalRoot(555))
+
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
  * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
