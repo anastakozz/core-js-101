@@ -66,7 +66,6 @@ function processAllPromises(array) {
   return Promise.resolve(result);
 }
 
-
 /**
  * Return Promise object that should be resolved with value received from
  * Promise object that will be resolved first.
@@ -87,7 +86,7 @@ function processAllPromises(array) {
  *
  */
 function getFastestPromise(array) {
-  return Promise.race(array);
+  return Promise.race(array).then((x) => x);
 }
 
 /**
