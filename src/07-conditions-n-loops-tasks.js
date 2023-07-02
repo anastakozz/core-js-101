@@ -358,11 +358,29 @@ function toNaryString(/* num, n */) {
  *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
  *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
  */
-function getCommonDirectoryPath(/* pathes */) {
-  throw new Error('Not implemented');
+function getCommonDirectoryPath(pathes) {
+  const arr = pathes.map((item) => item.split('/'));
+  const result = [];
+  for (let i = 0; i < arr[0].length; i += 1) {
+    let check = false;
+    for (let j = 1; j < arr.length; j += 1) {
+      if (arr[0][i] === arr[j][i]) {
+        check = true;
+      } else {
+        check = false;
+      }
+    }
+    if (check) result.push(arr[0][i]);
+  }
+  if (result.length === 0) {
+    return '';
+  } if (result.join('/') === '') {
+    return '/';
+  }
+  return `${result.join('/')}/`;
 }
 
-
+// console.log(getCommonDirectoryPath(['/web/assets/style.css', '/.bin/mocha',  '/read.me']))
 /**
  * Returns the product of two specified matrixes.
  * See details: https://en.wikipedia.org/wiki/Matrix_multiplication
