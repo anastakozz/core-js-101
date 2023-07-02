@@ -341,8 +341,11 @@ function isBracketsBalanced(/* str */) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(/* num, n */) {
-  throw new Error('Not implemented');
+function toNaryString(num, n) {
+  if (n === 10) {
+    return num.toString();
+  }
+  return num.toString(n);
 }
 
 
@@ -380,7 +383,6 @@ function getCommonDirectoryPath(pathes) {
   return `${result.join('/')}/`;
 }
 
-// console.log(getCommonDirectoryPath(['/web/assets/style.css', '/.bin/mocha',  '/read.me']))
 /**
  * Returns the product of two specified matrixes.
  * See details: https://en.wikipedia.org/wiki/Matrix_multiplication
@@ -436,6 +438,13 @@ function getMatrixProduct(/* m1, m2 */) {
  */
 function evaluateTicTacToePosition(/* position */) {
   throw new Error('Not implemented');
+  // for (let i = 0; i < 3; i += 1) {
+  //   if (position[i].every((item) => item === '0' || item === 'X')) return position[i][0]
+  // }
+
+  // for (let j = 0; j < 3; j += 1){
+  //   if (position.every((item) => item[j] === '0' || item[j] === 'X')) return
+  // }
 }
 
 
