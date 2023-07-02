@@ -60,9 +60,12 @@ function willYouMarryMe(isPositiveAnswer) {
  *    })
  *
  */
-function processAllPromises(/* array */) {
-  throw new Error('Not implemented');
+function processAllPromises(array) {
+  const result = [];
+  array.map((item) => item.then((value) => result.push(value)));
+  return Promise.resolve(result);
 }
+
 
 /**
  * Return Promise object that should be resolved with value received from
@@ -83,8 +86,8 @@ function processAllPromises(/* array */) {
  *    })
  *
  */
-function getFastestPromise(/* array */) {
-  throw new Error('Not implemented');
+function getFastestPromise(array) {
+  return Promise.race(array);
 }
 
 /**
